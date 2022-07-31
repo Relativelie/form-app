@@ -1,10 +1,17 @@
 import {
+  FC,
   MutableRefObject, useRef,
 } from 'react';
 import classNames from 'classnames';
 import './styles.scss';
 
-const CompInput = ({ specClass, check, isCorrect }) => {
+type Props = {
+  specClass?: string;
+  check: (...rest) => void;
+  isCorrect: boolean
+};
+
+const CompInput:FC<Props> = ({ specClass, check, isCorrect }) => {
   const inputValue = useRef() as MutableRefObject<HTMLInputElement>;
 
   return (
@@ -20,6 +27,10 @@ const CompInput = ({ specClass, check, isCorrect }) => {
       onKeyUp={(e) => check(e.key, e)}
     />
   );
+};
+
+CompInput.defaultProps = {
+  specClass: undefined,
 };
 
 export default CompInput;

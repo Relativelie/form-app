@@ -88,7 +88,7 @@ const Feedback = () => {
         Отправляем анонсы новых статей, выпусков и трансляций
       </p>
       <form className="feedback_form" action="some url">
-        <CompInputEmail />
+        <CompInputEmail specClass="feedback_input" />
 
         <button
           type="button"
