@@ -8,6 +8,7 @@ import CompInputEmail from '../../components/input-email';
 import CompInputTel from '../../components/input-tel/index.';
 import CompInputDate from '../../components/input-date';
 import CompInputName from '../../components/input-name';
+import CompInputComment from '../../components/input-comment';
 
 const Feedback = () => {
   const [clarifyingText, setClarifyingText] = useState('');
@@ -95,6 +96,7 @@ const Feedback = () => {
         <CompInputEmail specClass="feedback_input" />
         <CompInputTel specClass="feedback_input" />
         <CompInputDate specClass="feedback_input" />
+        <CompInputComment specClass="feedback_comment" />
         <button
           type="button"
           className="feedback_subscribe"

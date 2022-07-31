@@ -7,6 +7,9 @@ $fontSizeTitles: 80px;
 $fontSizeTitlesMob: 40px;
 $defaultMargin: clamp(15px, 5vw, 100px);
 $distanceBetweenChild: 30px;
+$smInputH: 50px;
+$lgInputH: 100px;
+$fullWidth: 100%;
 
 @mixin textSettings($fontSize, $fontColor, $lineHeight) {
     font-size: $fontSize;
@@ -16,9 +19,9 @@ $distanceBetweenChild: 30px;
     color: $fontColor;
 }
 
-@mixin feedbackButtonAndInput {
+@mixin feedbackButtonAndInput($height) {
     box-sizing: border-box;
-    height: 50px;
+    height: $height;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.4);
     color: $fontColorDark;

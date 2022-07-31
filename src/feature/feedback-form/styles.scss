@@ -1,17 +1,29 @@
-@import '../../scss/variables';
+@import "../../scss/variables";
 
+.feedback_input,
+.feedback_comment {
+  @include textSettings(
+    $fontSize: 14px,
+    $fontColor: $fontColorDark,
+    $lineHeight: 20px
+  );
+  padding: 14px 15px 16px 20px;
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
 
 .feedback_input {
-    @include textSettings($fontSize: 14px, $fontColor: $fontColorDark, $lineHeight: 20px);
-    @include feedbackButtonAndInput;
-    padding: 14px 15px 16px 20px;
+  @include feedbackButtonAndInput($smInputH);
+}
 
-    &::placeholder {
-        color: rgba(0, 0, 0, 0.6);
-    }
+.feedback_comment {
+  @include feedbackButtonAndInput($lgInputH);
+  width: 100%;
 }
 
 .feedback_input:focus {
-    border: 1px solid #000000;
-    outline-color: #000000;
+  border: 1px solid #000000;
+  outline-color: #000000;
 }
