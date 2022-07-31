@@ -1,4 +1,6 @@
-import { useState, SyntheticEvent, FC, useRef, MutableRefObject } from 'react';
+import {
+  useState, SyntheticEvent, FC, useRef, MutableRefObject,
+} from 'react';
 import CompInput from '../input';
 
 type Props = {

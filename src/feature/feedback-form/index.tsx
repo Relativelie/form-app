@@ -7,6 +7,7 @@ import LoadingSpinner from '../../components/loading-spinner';
 import CompInputEmail from '../../components/input-email';
 import CompInputTel from '../../components/input-tel/index.';
 import CompInputDate from '../../components/input-date';
+import CompInputName from '../../components/input-name';
 
 const Feedback = () => {
   const [clarifyingText, setClarifyingText] = useState('');
@@ -90,6 +91,7 @@ const Feedback = () => {
         Отправляем анонсы новых статей, выпусков и трансляций
       </p>
       <form className="feedback_form" action="some url">
+        <CompInputName specClass="feedback_input" />
         <CompInputEmail specClass="feedback_input" />
         <CompInputTel specClass="feedback_input" />
         <CompInputDate specClass="feedback_input" />

@@ -21,7 +21,7 @@ const CompInputTel = ({ specClass }) => {
     return ` ${value}`;
   };
 
-  const phoneChange = () => {
+  const onChangePhone = () => {
     let telValue;
     if (inputValue.current.value[0] === '+') {
       telValue = inputValue.current.value.substring(2);
@@ -45,7 +45,7 @@ const CompInputTel = ({ specClass }) => {
       specClass={specClass}
       refValue={inputValue}
       check={validatePhone}
-      onChange={phoneChange}
+      onChange={onChangePhone}
       isCorrect={isCorrect}
       inputName="text"
       placeholder="Телефон"
