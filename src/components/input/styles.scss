@@ -1,4 +1,37 @@
-.incorrectInputValue {
-    outline-color: red !important;
-    border: 1px solid red !important;
+@import "../../scss/variables";
+
+.input-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.input-label {
+  @include textSettings(
+    $fontSize: 12px,
+    $fontColor: $fontColorDark,
+    $lineHeight: 20px
+  );
+  opacity: 0;
+}
+
+input:focus + .input-label {
+  opacity: 1;
+}
+
+.input-label_visible {
+  opacity: 1;
+}
+
+.__wrong-value {
+  outline-color: $errorColor !important;
+  border: 2px solid $errorColor !important;
+}
+
+.input-error-text {
+  @include textSettings(
+    $fontSize: 12px,
+    $fontColor: $errorColor,
+    $lineHeight: 20px
+  );
+  margin: 0;
 }

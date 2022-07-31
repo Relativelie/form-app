@@ -17,6 +17,7 @@ module.exports = {
   rules: {
     "import/no-extraneous-dependencies": "off",
     "react/react-in-jsx-scope": "off",
-    "react/function-component-definition": "off"
+    "react/function-component-definition": "off",
+    "no-plusplus": "off",
   },
 };

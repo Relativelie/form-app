@@ -11,6 +11,7 @@ const CompInputEmail: FC<Props> = ({ specClass }) => {
   const [rule] = useState(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
   const [isCorrect, setIsCorrect] = useState(true);
   const inputValue = useRef() as MutableRefObject<HTMLInputElement>;
+  const errorText = 'Enter an email in the format email@email.ww';
 
   const checkEmail = (
     eventType: string,
@@ -24,7 +25,15 @@ const CompInputEmail: FC<Props> = ({ specClass }) => {
   };
 
   return (
-    <CompInput specClass={specClass} refValue={inputValue} check={checkEmail} isCorrect={isCorrect} inputName="email" placeholder="Email" />
+    <CompInput
+      specClass={specClass}
+      refValue={inputValue}
+      check={checkEmail}
+      isCorrect={isCorrect}
+      inputName="email"
+      placeholder="Email"
+      errorText={!isCorrect ? errorText : undefined}
+    />
   );
 };
 

@@ -1,4 +1,7 @@
-import { useState, useEffect, FormEvent } from 'react';
+import classNames from 'classnames';
+import {
+  useState, useEffect, FormEvent, FC,
+} from 'react';
 import './styles.scss';
 
 const current = new Date();
@@ -6,7 +9,11 @@ export const currentDate = current.getDate();
 export const currentMonth = current.getMonth() + 1;
 export const currentYear = current.getFullYear();
 
-const CompInputDate = ({ specClass }) => {
+type Props = {
+  specClass?: string;
+};
+
+const CompInputDate:FC<Props> = ({ specClass }) => {
   const [selectedDate, setSelectedDate] = useState('');
 
   const checkMonthAndDay = (value: number) => (value.toString().length === 2 ? value : `0${value}`);
@@ -32,7 +39,7 @@ const CompInputDate = ({ specClass }) => {
 
   return (
     <input
-      className="feedback_input"
+      className={classNames(specClass !== undefined && specClass, 'date__input')}
       name="date"
       type="date"
       value={selectedDate}
@@ -46,6 +53,10 @@ const CompInputDate = ({ specClass }) => {
       max={adulthood}
     />
   );
+};
+
+CompInputDate.defaultProps = {
+  specClass: undefined,
 };
 
 export default CompInputDate;

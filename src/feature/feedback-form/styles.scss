@@ -1,7 +1,32 @@
 @import "../../scss/variables";
 
-.feedback_input,
-.feedback_comment {
+.feedback {
+  max-width: 400px;
+}
+
+// TITLE AND DESCRIPTION
+.feedback__title {
+  @include titles($titleColor: $fontColorDark);
+}
+
+.feedback__description {
+  @include textSettings(
+    $fontSize: 16px,
+    $fontColor: rgba(0, 0, 0, 0.6),
+    $lineHeight: 20px
+  );
+  margin: 0 0 20px 0;
+}
+
+// FORM
+.feedback__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feedback__input,
+.feedback__comment {
   @include textSettings(
     $fontSize: 14px,
     $fontColor: $fontColorDark,
@@ -14,16 +39,32 @@
   }
 }
 
-.feedback_input {
+.feedback__input {
   @include feedbackButtonAndInput($smInputH);
 }
 
-.feedback_comment {
+.feedback__comment {
   @include feedbackButtonAndInput($lgInputH);
   width: 100%;
 }
 
-.feedback_input:focus {
+.feedback__input:focus {
   border: 1px solid #000000;
   outline-color: #000000;
+}
+
+// PROCESSING
+.processing {
+  display: flex;
+  align-items: center;
+  gap: 10vw;
+  margin: 5px;
+}
+
+.processing__text {
+  @include textSettings(
+    $fontSize: 14px,
+    $fontColor: $fontColorDark,
+    $lineHeight: 20px
+  );
 }

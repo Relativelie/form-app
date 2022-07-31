@@ -10,6 +10,7 @@ type Props = {
 const CompInputName: FC<Props> = ({ specClass }) => {
   const [isCorrect, setIsCorrect] = useState(true);
   const inputValue = useRef() as MutableRefObject<HTMLInputElement>;
+  const errorText = 'First and last names must be at least 3 and no more than 30 characters';
 
   const checkName = (eventType: string, event: SyntheticEvent<EventTarget>) => {
     if (eventType === 'blur' || eventType === 'Enter') {
@@ -18,8 +19,10 @@ const CompInputName: FC<Props> = ({ specClass }) => {
       if (arrayInputValue.length > 2 || arrayInputValue.length < 2) {
         setIsCorrect(false);
       } else if (
-        (arrayInputValue[0].length < 3 || arrayInputValue[0].length > 30)
-        || (arrayInputValue[1].length < 3 || arrayInputValue[1].length > 30)
+        arrayInputValue[0].length < 3
+        || arrayInputValue[0].length > 30
+        || arrayInputValue[1].length < 3
+        || arrayInputValue[1].length > 30
       ) {
         setIsCorrect(false);
       } else {
@@ -42,6 +45,7 @@ const CompInputName: FC<Props> = ({ specClass }) => {
       inputName="text"
       placeholder="First and Last name"
       onChange={onChangeName}
+      errorText={!isCorrect ? errorText : undefined}
     />
   );
 };

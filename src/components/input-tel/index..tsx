@@ -1,9 +1,16 @@
-import { useState, useRef, MutableRefObject } from 'react';
+import {
+  useState, useRef, MutableRefObject, FC,
+} from 'react';
 import CompInput from '../input';
 
-const CompInputTel = ({ specClass }) => {
+type Props = {
+  specClass?: string
+};
+
+const CompInputTel:FC<Props> = ({ specClass }) => {
   const [isCorrect, setIsCorrect] = useState(true);
   const inputValue = useRef() as MutableRefObject<HTMLInputElement>;
+  const errorText = 'Enter an valid phone e.g. +7 123 456 45 45';
 
   const validatePhone = (eventType: string) => {
     if (eventType === 'blur' || eventType === 'Enter') {
@@ -48,9 +55,14 @@ const CompInputTel = ({ specClass }) => {
       onChange={onChangePhone}
       isCorrect={isCorrect}
       inputName="text"
-      placeholder="Телефон"
+      placeholder="Telephone"
+      errorText={!isCorrect ? errorText : undefined}
     />
   );
+};
+
+CompInputTel.defaultProps = {
+  specClass: undefined,
 };
 
 export default CompInputTel;
