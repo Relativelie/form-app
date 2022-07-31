@@ -11,15 +11,6 @@
     $fontColor: $fontColorDark,
     $lineHeight: 20px
   );
-  opacity: 0;
-}
-
-input:focus + .input-label {
-  opacity: 1;
-}
-
-.input-label_visible {
-  opacity: 1;
 }
 
 .__wrong-value {

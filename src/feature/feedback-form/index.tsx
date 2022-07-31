@@ -3,13 +3,15 @@ import 'regenerator-runtime/runtime';
 import 'core-js/stable';
 
 import './styles.scss';
-import LoadingSpinner from '../../components/loading-spinner';
-import CompInputEmail from '../../components/input-email';
-import CompInputTel from '../../components/input-tel/index.';
-import CompInputDate from '../../components/input-date';
-import CompInputName from '../../components/input-name';
-import CompInputComment from '../../components/input-comment';
-import CompButton from '../../components/button';
+import {
+  CompButton,
+  CompInputComment,
+  CompInputDate,
+  CompInputEmail,
+  CompInputName,
+  CompInputTel,
+  LoadingSpinner,
+} from '../../components';
 
 const FeatureFeedback = () => {
   const [clarifyingText, setClarifyingText] = useState('');
@@ -88,11 +90,8 @@ const FeatureFeedback = () => {
   return (
     <section className="feedback">
       <header>
-        <h3 className="feedback__title">Subscribe</h3>
+        <h3 className="feedback__title">Feedback</h3>
       </header>
-      <p className="feedback__description">
-        Sending announcements of new articles, issues and broadcasts
-      </p>
       <form className="feedback__form" action="some url">
         <CompInputName specClass="feedback__input" />
         <CompInputEmail specClass="feedback__input" />

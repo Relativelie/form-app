@@ -4,18 +4,9 @@
   max-width: 400px;
 }
 
-// TITLE AND DESCRIPTION
+// TITLE
 .feedback__title {
   @include titles($titleColor: $fontColorDark);
-}
-
-.feedback__description {
-  @include textSettings(
-    $fontSize: 16px,
-    $fontColor: rgba(0, 0, 0, 0.6),
-    $lineHeight: 20px
-  );
-  margin: 0 0 20px 0;
 }
 
 // FORM

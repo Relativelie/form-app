@@ -13,7 +13,7 @@ type Props = {
   specClass?: string;
 };
 
-const CompInputDate:FC<Props> = ({ specClass }) => {
+const CompInputDate: FC<Props> = ({ specClass }) => {
   const [selectedDate, setSelectedDate] = useState('');
 
   const checkMonthAndDay = (value: number) => (value.toString().length === 2 ? value : `0${value}`);
@@ -38,20 +38,29 @@ const CompInputDate:FC<Props> = ({ specClass }) => {
   };
 
   return (
-    <input
-      className={classNames(specClass !== undefined && specClass, 'date__input')}
-      name="date"
-      type="date"
-      value={selectedDate}
-      onChange={(e) => selectDate(e)}
-      onKeyPress={(e) => {
-        e.preventDefault();
-      }}
-      min={`${currentYear - 150}-${checkMonthAndDay(
-        currentMonth,
-      )}-${currentDate}`}
-      max={adulthood}
-    />
+    <div className="date-input-container">
+      <label htmlFor="birthday-id" className="input-label input-label_visible">
+        Birthday
+      </label>
+      <input
+        id="birthday-id"
+        className={classNames(
+          specClass !== undefined && specClass,
+          'date__input',
+        )}
+        name="date"
+        type="date"
+        value={selectedDate}
+        onChange={(e) => selectDate(e)}
+        onKeyPress={(e) => {
+          e.preventDefault();
+        }}
+        min={`${currentYear - 150}-${checkMonthAndDay(
+          currentMonth,
+        )}-${currentDate}`}
+        max={adulthood}
+      />
+    </div>
   );
 };
 

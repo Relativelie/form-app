@@ -44,9 +44,7 @@ const CompInput: FC<Props> = ({
       />
       <label
         htmlFor={placeholder}
-        className={classNames('input-label', {
-          'input-label_visible': refValue.current !== undefined,
-        })}
+        className="input-label"
       >
         {placeholder}
       </label>
