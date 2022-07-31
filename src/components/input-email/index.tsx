@@ -1,4 +1,4 @@
-import { useState, SyntheticEvent, FC } from 'react';
+import { useState, SyntheticEvent, FC, useRef, MutableRefObject } from 'react';
 import CompInput from '../input';
 
 type Props = {
@@ -8,6 +8,7 @@ type Props = {
 const CompInputEmail: FC<Props> = ({ specClass }) => {
   const [rule] = useState(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
   const [isCorrect, setIsCorrect] = useState(true);
+  const inputValue = useRef() as MutableRefObject<HTMLInputElement>;
 
   const checkEmail = (
     eventType: string,
@@ -21,7 +22,7 @@ const CompInputEmail: FC<Props> = ({ specClass }) => {
   };
 
   return (
-    <CompInput specClass={specClass} check={checkEmail} isCorrect={isCorrect} />
+    <CompInput specClass={specClass} refValue={inputValue} check={checkEmail} isCorrect={isCorrect} inputName="email" placeholder="Email" />
   );
 };
 

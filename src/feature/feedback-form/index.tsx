@@ -5,6 +5,7 @@ import 'core-js/stable';
 import './styles.scss';
 import LoadingSpinner from '../../components/loading-spinner';
 import CompInputEmail from '../../components/input-email';
+import CompInputTel from '../../components/input-tel/index.';
 
 const Feedback = () => {
   const [clarifyingText, setClarifyingText] = useState('');
@@ -89,7 +90,7 @@ const Feedback = () => {
       </p>
       <form className="feedback_form" action="some url">
         <CompInputEmail specClass="feedback_input" />
-
+        <CompInputTel specClass="feedback_input" />
         <button
           type="button"
           className="feedback_subscribe"
