@@ -6,6 +6,7 @@ import './styles.scss';
 import LoadingSpinner from '../../components/loading-spinner';
 import CompInputEmail from '../../components/input-email';
 import CompInputTel from '../../components/input-tel/index.';
+import CompInputDate from '../../components/input-date';
 
 const Feedback = () => {
   const [clarifyingText, setClarifyingText] = useState('');
@@ -91,6 +92,7 @@ const Feedback = () => {
       <form className="feedback_form" action="some url">
         <CompInputEmail specClass="feedback_input" />
         <CompInputTel specClass="feedback_input" />
+        <CompInputDate specClass="feedback_input" />
         <button
           type="button"
           className="feedback_subscribe"
